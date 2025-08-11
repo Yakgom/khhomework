@@ -41,7 +41,7 @@ public class MemberController {
     }
 
     public String searchId(String id) {
-
+        String findId ="";
         for (int i = 0; i < m.length; i++) {
             if( m[i] != null &&m[i].getId().equals(id)){
                 return "찾으신 회원 조회 결과입니다.\n" +m[i].toString();
@@ -51,21 +51,33 @@ public class MemberController {
     }
 
     public String searchName(String name) {
+        String result = null;
+
         for (int i = 0; i < m.length; i++) {
-            if( m[i] != null &&m[i].getName().equals(name)){
-                return "찾으신 회원 조회 결과입니다.\n" +m[i].toString();
+            if (m[i] != null && m[i].getName().equals(name)) {
+                if (result == null) {
+                    result = "찾으신 회원 조회 결과입니다.\n";
+                }
+                result += m[i].toString() + "\n";
             }
         }
-        return "검색 결과가 없습니다.";
+
+        return (result != null) ? result : "검색 결과가 없습니다.";
     }
 
     public String searchEmail(String email) {
+        String result = null;
+
         for (int i = 0; i < m.length; i++) {
-            if( m[i] != null &&m[i].getEmail().equals(email)){
-                return "찾으신 회원 조회 결과입니다.\n" +m[i].toString();
+            if (m[i] != null && m[i].getEmail().equals(email)) {
+                if (result == null) {
+                    result = "찾으신 회원 조회 결과입니다.\n";
+                }
+                result += m[i].toString() + "\n";
             }
         }
-        return "검색 결과가 없습니다.";
+
+        return (result != null) ? result : "검색 결과가 없습니다.";
     }
 
     public boolean updatePassword(String id, String password) {
