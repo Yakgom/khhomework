@@ -50,6 +50,30 @@ public class MemberController {
         return "검색 결과가 없습니다.";
     }
     // 여기랑 Email 쪽 반환값을 잘못적어서 코드를 다르게 작성함
+    public Member[] searchName(String name) {
+    	
+    	for(int i=0; i<m.length; i++) {
+    		if(m[i] != null && m[i].getName().equals(name)) {
+    			System.out.println(m[i].toString());
+    		}
+    		
+    	}
+    	return m;
+    }
+    
+    public Member[] searchEmail(String email) {
+    	
+    	for(int i=0; i<m.length; i++) {
+    		if(m[i] != null && m[i].getEmail().equals(email)) {
+    			System.out.println(m[i].toString());
+    		}
+    		
+    	}
+    	return m;
+    }
+    
+    
+    /*
     public String searchName(String name) {
         String result = null;
 
@@ -63,9 +87,9 @@ public class MemberController {
         }
 
         return (result != null) ? result : "검색 결과가 없습니다.";
-    }
-
-    public String searchEmail(String email) {
+    }*/
+    
+    /*public String searchEmail(String email) {
         String result = null;
 
         for (int i = 0; i < m.length; i++) {
@@ -79,6 +103,8 @@ public class MemberController {
 
         return (result != null) ? result : "검색 결과가 없습니다.";
     }
+    
+    */
 
     public boolean updatePassword(String id, String password) {
         for (int i = 0; i < m.length; i++) {
@@ -137,4 +163,5 @@ public class MemberController {
 
 
 }
+
 
