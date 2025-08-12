@@ -49,7 +49,7 @@ public class MemberController {
         }
         return "검색 결과가 없습니다.";
     }
-
+    // 여기랑 Email 쪽 반환값을 잘못적어서 코드를 다르게 작성함
     public String searchName(String name) {
         String result = null;
 
@@ -137,3 +137,4 @@ public class MemberController {
 
 
 }
+
