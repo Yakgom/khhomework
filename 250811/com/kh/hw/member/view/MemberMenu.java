@@ -9,8 +9,17 @@ public class MemberMenu {
     private Scanner sc = new Scanner(System.in);
     private MemberController mc = new MemberController();
 
-    public MemberMenu() {}
-
+    // 초기화 블럭 2순위
+    {
+    	// 여기에 초기화 하고싶은걸 넣으면 됨
+    	
+    }
+    
+    // static 블럭 1순위
+    static{
+    	// 클래스가 올라갈때 딱 한번만 수행됨
+    	
+    }
 
     public void mainMenu() {
         while (true) {
@@ -303,3 +312,4 @@ public class MemberMenu {
     }
 
 }
+
